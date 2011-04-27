@@ -3,6 +3,10 @@ require "bundler"
 
 Bundler.setup :default, :development
 
+# Put test/unit back on the load path
+test_unit = File.expand_path(File.join(File.dirname(__FILE__), '..', 'unit'))
+$:.unshift test_unit unless $:.include? test_unit
+
 # These require statments *must* be in this order:
 # http://bit.ly/bCC0Ew
 # Somewhat surprised they're not being required by Bundler...

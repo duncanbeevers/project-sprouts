@@ -22,7 +22,7 @@ CLEAN.add 'doc'
 
 namespace :test do
   Rake::TestTask.new(:units) do |t|
-    t.libs << "test/unit"
+    t.libs << "./test/unit"
     t.test_files = FileList["test/unit/*_test.rb"]
     t.verbose = true
   end
